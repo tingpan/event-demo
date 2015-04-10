@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  creator_id: 1
+  resource_type: MyString
+  action_type: MyString
+  project_id: 
+  content: MyText
+
+two:
+  creator_id: 1
+  resource_type: MyString
+  action_type: MyString
+  project_id: 
+  content: MyText
