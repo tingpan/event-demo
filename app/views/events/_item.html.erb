@@ -1,0 +1,3 @@
+<% if event.resource_type? %>
+  <%= render partial: "events/items/#{event.resource_type}/#{ event.action_type }"  %>
+<% end %>

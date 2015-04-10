@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-md-8">
+  <% if @events.any? %>
+    <ol class="events">
+      <%= render partial: "events/item", collection: @events, as: :event %>
+    </ol>
+  <% end %>
+  </div>
+</div>
