@@ -5,6 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Team.create(name: "喵喵咪")
+
+User.create(name: "呆喵", team_id: 1)
+User.create(name: "笨喵", team_id: 1)
+
+Project.create(name: "打老鼠", team_id: 1)
+Project.create(name: "吃老鼠", team_id: 1)
+
+Access.create(user_id: 1, project_id: 1)
+Access.create(user_id: 2 , project_id: 1)
+Access.create(user_id: 1, project_id: 2)
+Access.create(user_id: 2 , project_id: 2)
+
 todo_event_content =  {
       title: "打老鼠",
       content: "打老鼠打老鼠",
@@ -24,6 +37,10 @@ todo_add_event = Event.create(creator_id: 1, creator_name: "呆喵",
       resource_type: "todos", action_type: "add",
       project_id: 1, content: todo_event_content.to_json)
 
+todo_add_event = Event.create(creator_id: 2, creator_name: "笨喵",
+                              resource_type: "todos", action_type: "add",
+                              project_id: 1, content: todo_event_content.to_json)
+
 todo_assign_event = Event.create(creator_id: 1, creator_name: "呆喵", 
       resource_type: "todos", action_type: "assign",
       project_id: 1, content: todo_event_content.to_json)
@@ -34,7 +51,7 @@ todo_change_due_event = Event.create(creator_id: 1, creator_name: "呆喵",
 
 todo_change_worker_event = Event.create(creator_id: 1, creator_name: "呆喵", 
       resource_type: "todos", action_type: "change_worker",
-      project_id: 1, content: todo_event_content.to_json)
+      project_id: 2, content: todo_event_content.to_json)
 
 todo_complete_event = Event.create(creator_id: 1, creator_name: "呆喵", 
       resource_type: "todos", action_type: "complete",
