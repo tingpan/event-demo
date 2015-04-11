@@ -13,7 +13,8 @@ class Comment < ActiveRecord::Base
     event_content = {
       content: content,
       commentable_id: commentable_id,
-      commentable_type: commentable_type
+      commentable_type: commentable_type,
+      commentable_title: commentable.title
     }
   end
 end

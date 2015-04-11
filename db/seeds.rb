@@ -30,7 +30,8 @@ todo_event_content =  {
 comment_event_content = {
       content: "喵老鼠",
       commentable_id: 1,
-      commentable_type: "todos"
+      commentable_type: "todos",
+      commentable_title: "打晕老鼠"
     }
 
 todo_add_event = Event.create(creator_id: 1, creator_name: "呆喵", 
