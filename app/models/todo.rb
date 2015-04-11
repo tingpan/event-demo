@@ -12,6 +12,7 @@ class Todo < ActiveRecord::Base
       content: content,
       due: due,
       worker_id: worker_id,
+      worker_name: User.find(worker_id).name,
       status: status
     }
   end

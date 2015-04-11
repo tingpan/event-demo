@@ -1,9 +1,48 @@
-<div class="row">
-  <div class="col-md-8">
-  <% if @events.any? %>
-    <ol class="events">
-      <%= render partial: "events/item", collection: @events, as: :event %>
-    </ol>
-  <% end %>
-  </div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit">
+    <title>Event Test</title>
+</head>
+<body>
+<div class="nav">
+    <div class="logo"><h1>Miaoer</h1></div>
+    <ul>
+        <li><h4>没有导航</h4></li>
+        <li class="active"><h4><a href="">动态</a></h4></li>
+        <li><h4>没有导航</h4></li>
+        <li><h4>喵喵</h4></li>
+    </ul>
 </div>
+<div class="container event">
+    <div class="member_filter">筛选成员: <select>
+        <option>所有成员</option>
+    </select></div>
+    <div class="each_day">
+        <h1>4月1日</h1>
+        <% current_project_id = nil %>
+        <div class="each_project">
+        <% if @events.any? %>
+          <% for event in @events %>
+            <% if current_project_id.nil? || event.project_id != current_project_id %>
+              <% current_project_id = event.project_id %>
+              <div><h2><%= event.project.name %></h2></div>
+              <hr>
+            <% end %>
+            <% if event.resource_type? %>
+                <div class="each_event">
+                <div class="event_time"><%= event.created_at.strftime('%m-%d %H:%M') %></div>
+                <%= image_tag("logo.jpeg", :alt => "default image") %>
+                <div class="event_content">
+                    <%= render partial: "events/items/#{event.resource_type}/#{ event.action_type }", locals: {event: event} %>
+                </div>
+                </div>
+              <% end %>
+          <% end %>
+        <% else %>
+      <% end %>
+</div>
+</body>
+</html>

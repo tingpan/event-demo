@@ -8,9 +8,10 @@ module Eventable
   def event_content()
   end
 
-  def create_event(creator, event_content):
-    event = Event.create(creator_id: creator.id, resource_type: self.class.name, 
-      project_id: self.project_id, content: event_content)
+  def create_event(creator, action_type , event_content):
+    event = Event.create(creator_id: creator.id, creator_name: creator.name, 
+      resource_type: self.class.name, action_type: action_type 
+      project_id: self.project_id, content: event_content.to_json)
   end
 
 end

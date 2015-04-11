@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150410041836) do
+ActiveRecord::Schema.define(version: 20150410231707) do
 
   create_table "accesses", force: :cascade do |t|
     t.integer  "user_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150410041836) do
     t.text     "content"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "creator_name"
   end
 
   add_index "events", ["project_id"], name: "index_events_on_project_id"
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 20150410041836) do
     t.integer  "worker_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "status"
   end
 
   add_index "todos", ["project_id"], name: "index_todos_on_project_id"

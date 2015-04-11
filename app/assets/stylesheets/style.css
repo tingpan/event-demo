@@ -1,0 +1,130 @@
+body {
+    background-color: #F2F5E9;
+    font-size: 11pt;
+    min-width: 1080px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h6 {
+    color: #4C675F;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+select{
+    background-color: #ffffff;
+    outline: none;
+    border: none;
+    color: #4C675F;
+    padding: 0;
+    font-size: inherit;
+}
+
+hr {
+    border: solid;
+    border-bottom: none;
+    color: #f9f2f4;
+    width: 80%;
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+
+.nav {
+    width: 960px;
+    margin: 20px auto;
+    min-height: 50px;
+}
+
+.logo {
+    float: left;
+    margin-right: 20px;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav li {
+    margin-top: 10px;
+    float: left;
+    margin-right: 20px;
+}
+
+.logo {
+    margin-top: 0;
+}
+
+.nav a:hover {
+    color: #ffffff;
+    text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+.event {
+    width: 900px;
+    padding: 30px;
+    margin: 30px auto;
+    min-height: 600px;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+.member_filter {
+}
+
+.member_filter {
+    padding-left: 10px;
+}
+
+.each_day {
+    padding: 5px 20px;
+    margin: 20px 0 0 0;
+}
+
+.each_project {
+    margin-bottom: 50px;
+}
+
+.each_event {
+    min-height: 50px;
+    margin-bottom: 20px;
+}
+
+.event_time {
+    float: left;
+    line-height: 50px;
+    vertical-align: central;
+    color: #666666;
+}
+
+.each_event img {
+    margin: 0 20px;
+    float: left;
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.event_content {
+    padding-top: 5px;
+}
+
+.username {
+    font-size: 130%;
+    font-weight: 700;
+}
+
+.event_detail {
+    padding-top: 10px;
+    color: #666666;
+}
