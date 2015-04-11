@@ -2,13 +2,23 @@
 <html>
 <head>
   <title>EventIndexDemo</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="nav">
+    <div class="logo"><h1>Miaoer</h1></div>
+    <ul>
+        <li><h4>没有导航</h4></li>
+        <li class="active"><h4><a href="">动态</a></h4></li>
+        <li><h4>没有导航</h4></li>
+        <li><h4>喵喵</h4></li>
+    </ul>
+</div>
 <%= yield %>
-
 </body>
 </html>
