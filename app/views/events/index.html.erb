@@ -21,11 +21,15 @@
         <option>所有成员</option>
     </select></div>
     <div class="each_day">
-        <h1>4月1日</h1>
         <% current_project_id = nil %>
+        <% event_date = nil %>
         <div class="each_project">
         <% if @events.any? %>
           <% for event in @events %>
+            <% if event_date.nil? || event.created_at.strftime('%m-%d') != event_date %>
+              <% event_date =  event.created_at.strftime('%m-%d') %>
+              <h1><%= event_date %></h1>
+            <% end %>
             <% if current_project_id.nil? || event.project_id != current_project_id %>
               <% current_project_id = event.project_id %>
               <div><h2><%= event.project.name %></h2></div>
@@ -33,7 +37,7 @@
             <% end %>
             <% if event.resource_type? %>
                 <div class="each_event">
-                <div class="event_time"><%= event.created_at.strftime('%m-%d %H:%M') %></div>
+                <div class="event_time"><%= event.created_at.strftime('%H:%M') %></div>
                 <%= image_tag("logo.jpeg", :alt => "default image") %>
                 <div class="event_content">
                     <%= render partial: "events/items/#{event.resource_type}/#{ event.action_type }", locals: {event: event} %>

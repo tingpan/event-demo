@@ -14,6 +14,12 @@ todo_event_content =  {
       status: 0
     }
 
+comment_event_content = {
+      content: "喵老鼠",
+      commentable_id: 1,
+      commentable_type: "todos"
+    }
+
 todo_add_event = Event.create(creator_id: 1, creator_name: "呆喵", 
       resource_type: "todos", action_type: "add",
       project_id: 1, content: todo_event_content.to_json)
@@ -25,3 +31,19 @@ todo_assign_event = Event.create(creator_id: 1, creator_name: "呆喵",
 todo_change_due_event = Event.create(creator_id: 1, creator_name: "呆喵", 
       resource_type: "todos", action_type: "change_due",
       project_id: 1, content: todo_event_content.to_json)
+
+todo_change_worker_event = Event.create(creator_id: 1, creator_name: "呆喵", 
+      resource_type: "todos", action_type: "change_worker",
+      project_id: 1, content: todo_event_content.to_json)
+
+todo_complete_event = Event.create(creator_id: 1, creator_name: "呆喵", 
+      resource_type: "todos", action_type: "complete",
+      project_id: 1, content: todo_event_content.to_json)
+
+todo_delete_event = Event.create(creator_id: 1, creator_name: "呆喵", 
+      resource_type: "todos", action_type: "assign",
+      project_id: 1, content: todo_event_content.to_json)
+
+comment_add_event = Event.create(creator_id: 1, creator_name: "呆喵", 
+      resource_type: "comments", action_type: "add",
+      project_id: 1, content: comment_event_content.to_json)
